@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Signup</title>
+    <link rel="stylesheet" href="../static/css/login.css">
+    <link rel="icon" href="{{ url_for('static', filename='img/loader.png') }}" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="login-page">
+        <div class="w-full max-w-md bg-white p-8 rounded-lg shadow-lg relative">
+            <!-- Flash messages section -->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flashes">
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+            {% endwith %}
+        </div>  
+
+        <div class="form">
+            <div class="flex justify-center mb-6">
+                <img src="{{ url_for('static', filename='img/main-logo.png') }}" alt="Shamba Salama Logo" style="max-width: 150px; max-height: 150px;">
+            </div>
+            <section id="register-form">
+                <form class="register-form" action="{{ url_for('login') }}" method="POST">
+                    <input type="hidden" name="form_type" value="register"/>
+                    <input type="text" name="username" placeholder="name" required/>
+                    <input type="password" name="password" placeholder="password" required/>
+                    <input type="text" name="email" placeholder="email address" required/>
+
+                    <!-- Dropdown for Role -->
+                    <select name="role" required>
+                        <option value="" disabled selected>Select Role</option>
+                        <option value="farmer">Farmer</option>
+                        <option value="expert">Expert</option>
+                    </select>
+                    <select name="gender" required>
+                        <option value="" disabled selected>Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+
+                    <button type="submit">create</button>
+                    <p class="message">Already registered? <a href="#login-form">Sign In</a></p>
+                </form>
+            </section>
+            <section id="login-form">
+                <form class="login-form" action="{{ url_for('login') }}" method="POST">
+                    <input type="hidden" name="form_type" value="login"/>
+                    <input type="email" name="email" placeholder="email" required/>
+                    <input type="password" name="password" placeholder="password" required/>
+                    <button type="submit">login</button>
+                    <p class="message">Not registered? <a href="#register-form">Create an account</a></p>
+                </form>
+            </section>
+        </div>
+    </div>
+<script>
+    $('.message a').click(function(){
+    $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+ });
+</script>
+</body>
+</html>

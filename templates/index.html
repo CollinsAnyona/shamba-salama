@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Shamba Salama</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link rel="icon" href="{{ url_for('static', filename='img/loader.png') }}" type="image/x-icon">
+
+  <link href="../static/img/favicon.png" rel="icon">
+  <link href="../static/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../static/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="{{ url_for('static', filename='img/main-logo.png') }}" alt="logo">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <!-- Home section (Hero) -->
+            <li><a href="#hero" class="active">Home</a></li>
+            
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>  
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <!-- Mobile menu toggle button -->
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </nav>
+      <a class="btn-getstarted" href="{{ url_for('login') }}">Get Started</a>
+    </div>
+  </header>
+
+  <main class="main">
+    
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+
+      <img src="{{ url_for('static', filename='img/hero-bg-abstract.png') }}" alt="" data-aos="fade-in" class="">
+
+      <div class="container">
+        <div class="row justify-content-center" data-aos="zoom-out">
+          <div class="col-xl-7 col-lg-9 text-center">
+            <h1>At Shamba Salama, we believe in the power of technology to transform agriculture.</h1>
+            <p>We empower farmers with resources, knowledge, and technology to enhance agricultural safety and productivity.</p>
+          </div>
+        </div>
+        <div class="text-center" data-aos="zoom-out" data-aos-delay="100">
+          <a href="{{ url_for('login') }}" class="btn-get-started">Get Started</a>
+        </div>
+
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>About Us</h2>
+        <p>Shamba Salama is dedicated to transforming agriculture through innovative technology, empowering smallholder farmers with data-driven solutions. Our vision is to enhance productivity, ensure food security, and build resilience against climate challenges.</p>
+      </div><!-- End Section Title -->
+    
+      <div class="container">
+        <div class="row gy-4">
+    
+          <!-- About Shamba Salama -->
+          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+            <p>
+              At Shamba Salama, we are committed to transforming agriculture through innovative technology. Our mission is to empower smallholder farmers with smart, data-driven solutions that enhance productivity, ensure food security, and build resilience against climate challenges.
+            </p>
+            <ul>
+              <li><i class="bi bi-check2-circle"></i> <span>Providing smallholder farmers with real-time access to agricultural extension services and market information.</span></li>
+              <li><i class="bi bi-check2-circle"></i> <span>Empowering farmers with weather forecasts, pest control strategies, and sustainable farming techniques.</span></li>
+              <li><i class="bi bi-check2-circle"></i> <span>Enhancing productivity through access to modern farm implements and improved resource management.</span></li>
+            </ul>            
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+    <!-- /About Section -->
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section light-background">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="0" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Clients</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="0" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Projects</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="0" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Hours Of Support</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="1" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Workers</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Stats Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Services</h2>
+        <p>Empowering Farmers with Technology for Sustainable Agriculture</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4 justify-content-center">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item item-orange position-relative">
+              <div class="icon">
+                <img itemprop="contentUrl" src="https://www.svgrepo.com/show/324541/business-shop-woman.svg" alt="Business Shop Woman SVG File" title="Business Shop Woman SVG File" width="100" height="100">
+              </div>
+                <h3>Marketplace for Supplies</h3>
+              
+              <p>Order farming supplies from trusted sellers through our integrated online marketplace.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item item-teal position-relative">
+              <div class="icon">
+                <img itemprop="contentUrl" src="https://www.svgrepo.com/show/455660/team-group.svg" alt="Team Group SVG File" title="Team Group SVG File" width="100" height="100">
+              </div>
+                <h3>Community Support Forums</h3>
+              
+              <p>Join discussions, share tips, and get advice from experts and other farmers in our online forums.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item item-red position-relative">
+              <div class="icon">
+                <img itemprop="contentUrl" src="https://www.svgrepo.com/show/92433/interview.svg" alt="Interview SVG File" title="Interview SVG File" width="100" height="100">
+
+              </div>
+                <h3>Expert Consultations</h3>
+              
+              <p>Access personalized recommendations from agricultural experts to optimize your farming practices.</p>
+            </div>
+          </div><!-- End Service Item -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item item-indigo position-relative">
+              <div class="icon">
+                <img itemprop="contentUrl" src="https://www.svgrepo.com/show/307751/data-analysis-examine.svg" alt="Data Analysis Examine SVG File" title="Data Analysis Examine SVG File" width="100" height="100">
+              </div>
+                <h3>Data Insights for Farmers</h3>
+              
+              <p>Use our platform to gain insights into your farm’s performance and increase productivity.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-item item-pink position-relative">
+              <div class="icon">
+                <img itemprop="contentUrl" src="https://www.svgrepo.com/show/494413/training-achievement-medal.svg" alt="Training Achievement Medal SVG File" title="Training Achievement Medal SVG File" width="100" height="100">
+
+              </div>
+                <h3>Training and Resources</h3>
+              
+              <p>Learn the latest techniques with expert guides, video tutorials, and hands-on resources.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+
+    </section>
+    
+    
+    <section id="call-to-action" class="call-to-action section accent-background">
+
+      <div class="container">
+        <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-xl-10">
+            <div class="text-center">
+              <h3>Ready to Revolutionize Your Farming?</h3>
+              <p>Join Shamba Salama today and take control of your farm’s success. Get access to expert agricultural insights, real-time market data, and innovative farming solutions—all at your fingertips.</p>
+              <a class="cta-btn" href="{{ url_for('login') }}">Get Started for Free</a>
+              <a class="cta-btn" href="{{ url_for('hydroponic') }}">Learn More About Shamba Salama</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /Call To Action Section -->
+
+    
+    <!-- Faq Section -->
+    <section id="faq" class="faq section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Frequently Asked Questions</h2>
+        <p>Answers to common questions about Shamba Salama's technology and services.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row justify-content-center">
+
+          <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="faq-container">
+              
+              <!-- FAQ 1 -->
+              <div class="faq-item faq-active">
+                <h3>What is Shamba Salama and how does it benefit smallholder farmers?</h3>
+                <div class="faq-content">
+                  <p>Shamba Salama is an innovative agricultural platform designed to empower smallholder farmers by providing them with timely, data-driven insights and essential farming resources. The platform addresses key challenges that small-scale farmers face, such as lack of access to extension services, unpredictable weather conditions, pest infestations, and difficulties in reaching markets.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <!-- FAQ 2 -->
+              <div class="faq-item">
+                <h3>Is Shamba Salama available offline?</h3>
+                <div class="faq-content">
+                  <p>Yes, Shamba Salama offers offline functionality to ensure farmers in rural areas with limited internet access can still use the platform. Once data is synced online, updates and analytics are seamlessly integrated.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <!-- FAQ 3 -->
+              <div class="faq-item">
+                <h3>What kind of support does Shamba Salama offer?</h3>
+                <div class="faq-content">
+                  <p>We offer ongoing support through local agricultural extension workers and provide access to expert consultants. Our team is available 24/7 to help with setup, troubleshooting, and training on how to best use our tools and technologies.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+            </div>
+
+          </div><!-- End Faq Column-->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Faq Section -->
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Get in touch With Us</h2>
+        <p>We’re here to help! Whether you have a question about FarmSmart, need assistance, or just want to share your thoughts, feel free to reach out.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
+          <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1021232.3716241319!2d33.147342470300174!3d-1.0176989931711822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19d4ac6f3c232e43%3A0xdda9ed43b855e532!2sMigori%20County!5e0!3m2!1sen!2ske!4v1741784075974!5m2!1sen!2ske" 
+              width="100%" 
+              height="270px" 
+              frameborder="0" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+      </div><!-- End Google Maps -->      
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4">
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-geo-alt flex-shrink-0"></i>
+              <div>
+                <h3>Address</h3>
+                <p>Migori, Kenya</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-telephone flex-shrink-0"></i>
+              <div>
+                <h3>Call Us</h3>
+                <p>+255740308007</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+              <i class="bi bi-envelope flex-shrink-0"></i>
+              <div>
+                <h3>Email Us</h3>
+                <p>cjotieno04@gmail.com</p>
+              </div>
+            </div><!-- End Info Item -->
+
+          </div>
+
+          <div class="col-lg-8">
+            <form method="POST" action="{{ url_for('send_contact_message') }}" class="php-email-form">
+
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                </div>
+
+                <button type="submit" class="w-full py-3 bg-green-500 text-white rounded-md hover:bg-blue-600 transition mt-4">Send Message</button>
+                  
+
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer id="footer" class="footer light-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        
+        <!-- About FarmSmart -->
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="{{ url_for('home') }}" class="logo d-flex align-items-center">
+            <span class="sitename">Shamba Salama</span>
+          </a>
+          <p>Shamba Salama is dedicated to transforming agriculture through innovative technology, empowering smallholder farmers with data-driven solutions.</p>
+          <div class="social-links d-flex mt-4">
+            <a href="https://twitter.com/FarmSmart"><i class="bi bi-twitter"></i></a>
+            <a href="https://facebook.com/FarmSmart"><i class="bi bi-facebook"></i></a>
+            <a href="https://instagram.com/FarmSmart"><i class="bi bi-instagram"></i></a>
+            <a href="https://linkedin.com/company/FarmSmart"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <!-- Useful Links -->
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Services Section -->
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <!-- <li><a href="#services">Hydroponic Systems</a></li> -->
+            <li><a href="#services">Farm Management Tools</a></li>
+            <li><a href="#services">Farmer Training</a></li>
+            <li><a href="#services">Support forums</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>Rongo-Homabay Road</p>
+
+          <p>Rongo, Migori</p>
+
+          <p class="mt-4"><strong>Phone:</strong> <span>+254740308007</span></p>
+          <p><strong>Email:</strong> <span>cjotieno04@gmail.com</span></p>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Copyright Section -->
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Shamba Salama</strong> <span>All Rights Reserved</span></p>
+    </div>
+
+  </footer>
+
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/vendor/php-email-form/validate.js"></script>
+  <script src="../static/vendor/aos/aos.js"></script>
+  <script src="../static/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../static/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../static/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../static/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="../static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="../static/js/main.js"></script>
+
+</body>
+
+</html>
