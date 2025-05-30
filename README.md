@@ -1,123 +1,123 @@
-# FarmSmart
+# Shamba Salama
 
-**Empowering Farmers with Sustainable Hydroponic Solutions**  
-FarmSmart (made by Afsa Umutoniwase)is a platform dedicated to revolutionizing agriculture in Africa by providing smallholder farmers with innovative hydroponic farming solutions. By leveraging cutting-edge technology, we aim to enhance sustainability, optimize resource use, and improve livelihoods.
+**AI-Powered Agricultural Extension for Smallholder Farmers**
+Shamba Salama is transforming agriculture in Kenya by delivering real-time, localized, and AI-driven farming support and market insights to smallholder farmers—directly through mobile phones. Designed to bridge the gap left by limited extension services, our platform empowers farmers with tools that boost productivity, increase income, and build resilience.
 
 ---
 
 ## Table of Contents
 
-1. [Overview](#overview)  
-2. [Key Features](#key-features)  
-3. [Technologies Used](#technologies-used)  
-4. [Setup and Installation](#setup-and-installation)  
-5. [Usage](#usage)  
-6. [Contributing](#contributing)  
+1. [Overview](#overview)
+2. [Key Features](#key-features)
+3. [Technologies Used](#technologies-used)
+4. [Setup and Installation](#setup-and-installation)
+5. [Usage](#usage)
+6. [Contributing](#contributing)
+
 ---
 
 ## Overview
 
-FarmSmart empowers farmers with tools and insights to embrace hydroponic farming, increasing productivity and sustainability while reducing water usage by 50%. The platform supports resource-constrained farmers with a focus on education, community engagement, and data-driven decision-making.
+Shamba Salama supports underserved farmers with AI-powered chatbots and real-time market access tools. Our platform is built to operate on smartphones, feature phones (via USSD/SMS), and desktop interfaces—making it inclusive, responsive, and scalable.
+
+So far, we’ve reached 200+ farmers in our pilot phase, with many reporting up to a 25% yield increase and a 30% improvement in household income.
 
 ---
 
 ## Key Features
 
-### 🌿 **Hydroponic Monitoring**  
-- Track water and nutrient levels in real-time.  
-- Receive alerts for optimized crop growth.  
+### 🤖 **AI Chatbot Extension**
 
-### 🛍 **Marketplace for Supplies**  
-- Find trusted suppliers for hydroponic kits and farm inputs.  
-- Convenient ordering and delivery options.  
+* Real-time, multilingual (English & Kiswahili) support for crop issues, planting guides, and pest management.
 
-### 💬 **Community Support Forums**  
-- Engage in farmer-to-farmer knowledge sharing.  
-- Access expert guidance and solutions to farming challenges.  
+### 📈 **Market Intelligence**
 
-### 📊 **Analytics Dashboard**  
-- Gain insights into farm performance and efficiency.  
+* Live price trends, selling recommendations, and buyer connections to eliminate middlemen.
 
-### 📚 **Training & Resources**  
-- Tutorials on hydroponic farming techniques.  
+### 📚 **Localized Learning**
+
+* Personalized advice based on region, season, and crops.
+
+### 📱 **Mobile-First Access**
+
+* Works via SMS/USSD for farmers without smartphones.
+
 ---
 
 ## Technologies Used
 
-FarmSmart uses modern tools and frameworks for an efficient and user-friendly experience:  
-
-- **Frontend:** Tailwind CSS, JavaScript, HTML5  
-- **Backend:** Python (Flask Framework)  
-- **Database:** SQLite  
-- **APIs:** RESTful APIs for data integration  
+* **Frontend:** HTML5, Tailwind CSS
+* **Backend:** Python (Flask), Jinja2
+* **AI:** OpenAI/GPT (with plans for LLaMA 3 integration)
+* **Database:** SQLite
+* **Deployment:** Vercel, GitHub
 
 ---
 
 ## Setup and Installation
 
-To set up FarmSmart locally, follow these steps:  
+1. **Clone the repository:**
 
-1. **Clone the repository:**  
-   ```bash
-   git clone https://github.com/Afsaumutoniwase/FarmSmart.git
-   ```  
+```bash
+git clone https://github.com/CollinsAnyona/shamba-salama.git
+cd shamba-salama
+```
 
-2. **Navigate to the project directory:**  
-   ```bash
-   cd FarmSmart
-   ```  
+2. **Create and activate a virtual environment:**
 
-3. **Create a virtual environment:**  
-   ```bash
-   python -m venv env
-   source env/bin/activate  # On Windows: env\Scripts\activate
-   ```  
+```bash
+python -m venv env
+env\Scripts\activate  # Windows
+```
 
-4. **Install required dependencies:**  
-   ```bash
-   pip install -r requirements.txt
-   ```  
+3. **Install dependencies:**
 
-5. **Run database migrations (if applicable):**  
-   ```bash
-   flask db upgrade
-   ```  
+```bash
+pip install -r requirements.txt
+```
 
-6. **Start the application:**  
-   ```bash
-   flask run
-   ```  
+4. **Run the application:**
 
-7. **Open the application:**  
-   Visit `http://127.0.0.1:5000` in your browser.  
+```bash
+python app.py
+```
+
+5. **Open in browser:**
+   Visit `http://127.0.0.1:5000`
 
 ---
 
 ## Usage
 
-- **Farmers:** Monitor farm performance, access hydroponic systems, and join the community.  
-- **Vendors (who are also farmers):** List hydroponic supplies and connect with fellow farmers.  
-- **Experts:** Offer guidance and solutions to the farming community.  
+* **Farmers:** Access AI chatbot, get advice, and connect to markets.
+* **Agronomists:** Contribute to expert-backed content and training.
+* **Partners & NGOs:** Collaborate on scaling digital advisory services.
 
 ---
 
 ## Contributing
 
-We welcome contributions to FarmSmart! Here's how you can contribute:  
+We welcome collaborators who want to help us empower African farmers. To contribute:
 
-1. Fork this repository.  
-2. Create a new branch for your feature or bug fix:  
-   ```bash
-   git checkout -b feature-name
-   ```  
-3. Make your changes and commit them:  
-   ```bash
-   git commit -m "Description of changes"
-   ```  
-4. Push your changes to the branch:  
-   ```bash
-   git push origin feature-name
-   ```  
-5. Create a pull request to the `main` branch of this repository.  
+1. Fork the repository
+2. Create a new feature branch:
+
+```bash
+git checkout -b feature-name
+```
+
+3. Commit your changes:
+
+```bash
+git commit -m "Added new feature"
+```
+
+4. Push and open a pull request:
+
+```bash
+git push origin feature-name
+```
 
 ---
+
+**Created with purpose by Collins Otieno and the Shamba Salama Team**
