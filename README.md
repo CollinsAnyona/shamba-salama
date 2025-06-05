@@ -79,7 +79,7 @@ pip install -r requirements.txt
 4. **Run the application:**
 
 ```bash
-python app.py
+python run.py
 ```
 
 5. **Open in browser:**
