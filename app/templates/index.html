@@ -53,7 +53,7 @@
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
       </nav>
-      <a class="btn-getstarted" href="{{ url_for('login') }}">Get Started</a>
+      <a class="btn-getstarted" href="{{ url_for('auth.login') }}">Get Started</a>
     </div>
   </header>
 
@@ -72,7 +72,7 @@
           </div>
         </div>
         <div class="text-center" data-aos="zoom-out" data-aos-delay="100">
-          <a href="{{ url_for('login') }}" class="btn-get-started">Get Started</a>
+          <a href="{{ url_for('auth.login') }}" class="btn-get-started">Get Started</a>
         </div>
 
       </div>
@@ -233,8 +233,8 @@
             <div class="text-center">
               <h3>Ready to Revolutionize Your Farming?</h3>
               <p>Join Shamba Salama today and take control of your farm’s success. Get access to expert agricultural insights, real-time market data, and innovative farming solutions—all at your fingertips.</p>
-              <a class="cta-btn" href="{{ url_for('login') }}">Get Started for Free</a>
-              <a class="cta-btn" href="{{ url_for('hydroponic') }}">Learn More About Shamba Salama</a>
+              <a class="cta-btn" href="{{ url_for('auth.login') }}">Get Started for Free</a>
+              <a class="cta-btn" href="{{ url_for('main.hydroponic') }}">Learn More About Shamba Salama</a>
             </div>
           </div>
         </div>
@@ -352,7 +352,7 @@
           </div>
 
           <div class="col-lg-8">
-            <form method="POST" action="{{ url_for('send_contact_message') }}" class="php-email-form">
+            <form method="POST" action="{{ url_for('main.send_contact_message') }}" class="php-email-form">
 
               <div class="row gy-4">
 
@@ -395,7 +395,7 @@
         
         <!-- About FarmSmart -->
         <div class="col-lg-5 col-md-12 footer-about">
-          <a href="{{ url_for('home') }}" class="logo d-flex align-items-center">
+          <a href="{{ url_for('main.home') }}" class="logo d-flex align-items-center">
             <span class="sitename">Shamba Salama</span>
           </a>
           <p>Shamba Salama is dedicated to transforming agriculture through innovative technology, empowering smallholder farmers with data-driven solutions.</p>

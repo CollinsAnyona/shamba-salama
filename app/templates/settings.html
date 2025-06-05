@@ -27,7 +27,7 @@
 
     <div class="bg-white shadow-lg rounded-lg p-8 space-y-8">
         <!-- Change Password Form -->
-        <form method="POST" action="{{ url_for('account_settings') }}">
+        <form method="POST" action="{{ url_for('users.account_settings') }}">
             <h3 class="text-xl font-semibold mb-4">Change Password</h3>
             
             <!-- Current Password -->
@@ -56,7 +56,7 @@
         </form>
 
         <!-- Delete Profile Form -->
-        <form method="POST" action="{{ url_for('account_settings') }}">
+        <form method="POST" action="{{ url_for('users.account_settings') }}">
             <h3 class="text-xl font-semibold mb-4">Delete Profile</h3>
             <p class="text-sm text-gray-600 mb-4">Once your account is deleted, it cannot be undone. Are you sure you want to delete your profile?</p>
             <button type="submit" name="delete_profile" class="w-full py-3 bg-red-500 text-white rounded-md hover:bg-red-600 transition">Delete Account</button>

@@ -8,7 +8,7 @@
         <!-- Top Cart Button -->
         <div class="cart-button">
             <!-- Redirects to the cart page -->
-            <a href="{{ url_for('cart') }}" class="cart-link">
+            <a href="{{ url_for('products.cart') }}" class="cart-link">
                 🛒 <span class="cart-count">{{ cart|length }}</span>
             </a>
         </div>
@@ -44,7 +44,7 @@
                     <p>{{ product.description }}</p>
                     <p>Price: Kshs.{{ product.price }}</p>
                     
-                    <form method="POST" action="{{ url_for('add_to_cart') }}">
+                    <form method="POST" action="{{ url_for('products.add_to_cart') }}">
                         <input type="hidden" name="product_id" value="{{ product.id }}">
                         <input type="number" name="quantity" min="1" value="1">
                         <button type="submit" class="add-to-cart-btn">Add to Cart</button>
@@ -55,7 +55,7 @@
 
         <!-- Link to Add New Product -->
         <div class="flex justify-center mt-8">
-            <a href="{{ url_for('add_product') }}" 
+            <a href="{{ url_for('products.add_product') }}" 
                class="bg-green-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-300 shadow-lg">
                 Add a new product
             </a>

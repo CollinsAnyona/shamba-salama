@@ -1,0 +1,38 @@
+<div class="sidebar">
+    <div class="sidebar-header">
+        <a href="{{ url_for('main.home') }}">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo">
+        </a>
+    </div>
+    <div class="sidebar-menu">
+        <a href="{{ url_for('main.dashboard') }}" class="{% if request.path == url_for('main.dashboard') %}active{% endif %}">
+            <span class="glyphicon glyphicon-leaf"></span> Farm Monitor
+        </a>
+        <a href="{{ url_for('users.expert') }}" class="{% if request.path == url_for('users.expert') %}active{% endif %}">
+            <span class="glyphicon glyphicon-briefcase"></span> Book an Expert
+        </a>
+        <a href="{{ url_for('posts.forums') }}" class="{% if request.path == url_for('posts.forums') %}active{% endif %}">
+            <span class="glyphicon glyphicon-comment"></span> Forums
+        </a>
+        <a href="{{ url_for('products.market') }}" class="{% if request.path == url_for('products.market') %}active{% endif %}">
+            <span class="glyphicon glyphicon-shopping-cart"></span> Market
+        </a>
+        <a href="{{ url_for('users.profile') }}" class="{% if request.path == url_for('users.profile') %}active{% endif %}">
+            <span class="glyphicon glyphicon-user"></span> Profile
+        </a>
+        <a href="{{ url_for('main.resources') }}" class="{% if request.path == url_for('main.resources') %}active{% endif %}">
+            <span class="glyphicon glyphicon-book"></span> Resources
+        </a>
+        <a href="{{ url_for('users.account_settings') }}" class="{% if request.path == url_for('users.account_settings') %}active{% endif %}">
+            <span class="glyphicon glyphicon-cog"></span> Settings
+        </a>
+        <a href="{{ url_for('main.help') }}" class="{% if request.path == url_for('main.help') %}active{% endif %}">
+            <span class="glyphicon glyphicon-question-sign"></span> Help
+        </a>
+        <a href="{{ url_for('auth.logout') }}" 
+           class="flex items-center justify-center px-2 py-0 rounded bg-lime-600 text-white">
+            <span class="glyphicon glyphicon-log-out"></span>
+            <span>Logout</span>
+        </a>
+    </div>
+</div>
