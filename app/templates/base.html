@@ -19,9 +19,9 @@
     <!-- Page Content -->
     <div class="content">
         {% block content %}{% endblock %}
-    </div>
-    
+    </div> 
 
     <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+    {% include 'bot.html' %}
 </body>
 </html>
