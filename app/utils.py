@@ -88,22 +88,22 @@ def create_default_experts():
     if not Expert.query.first():  # If no experts exist, add the default ones
         default_experts = [
             Expert(
-                name="Jane Umuhoza",
+                name="Mr. James Opondo",
                 profile_picture="/static/img/jane.jpg",
                 specialization="Sustainable Agriculture",
-                bio="Jane specializes in sustainable farming practices and has been helping farmers for over a decade.",
+                bio="Mr. Opondo specializes in sustainable farming practices and has been helping farmers for over a decade.",
             ),
             Expert(
-                name="Mark Muhire",
+                name="Erick Kimani",
                 profile_picture="/static/img/mark.jpg",
                 specialization="Hydroponics",
-                bio="Mark is an expert in hydroponic farming systems, focusing on improving water use efficiency in agriculture.",
+                bio="Erick is an expert in hydroponic farming systems, focusing on improving water use efficiency in agriculture.",
             ),
             Expert(
-                name="Emily Keza",
+                name="Dr. Jackline Omamo",
                 profile_picture="/static/img/emily.jpg",
                 specialization="Horticulture",
-                bio="Emily is a horticulturist with expertise in plant cultivation and advanced growing techniques.",
+                bio="Dr. Omamo is a horticulturist with expertise in plant cultivation and advanced growing techniques.",
             ),
         ]
         # Add experts to the session and commit
@@ -115,24 +115,24 @@ def create_default_expert_users():
     # Define the default expert users
     default_experts = [
         {
-            "username": "Jane Umuhoza",
-            "email": "jane@gmail.com",
+            "username": "James Opondo",
+            "email": "james@gmail.com",
             "password": "password123",
             "role": "expert",
-            "gender": "Female",
-            "profile_image_url": "jane.jpg",
+            "gender": "Male",
+            "profile_image_url": "james.jpg",
         },
         {
-            "username": "Mark Muhire",
-            "email": "mark@gmail.com",
+            "username": "Erick Kimani",
+            "email": "erick@gmail.com",
             "password": "password123",
             "role": "expert",
             "gender": "Male",
             "profile_image_url": "mark.jpg",
         },
         {
-            "username": "Emily keza",
-            "email": "emily@gmail.com",
+            "username": "Jackline Omamo",
+            "email": "jackline@gmail.com",
             "password": "password123",
             "role": "expert",
             "gender": "Female",
