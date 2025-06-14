@@ -35,7 +35,7 @@
         </div>
 
         <!-- Reply Form -->
-        <form action="{{ url_for('reply_message', booking_id=booking.id) }}" method="POST">
+        <form action="{{ url_for('bookings.reply_message', booking_id=booking.id) }}" method="POST">
             <textarea name="reply_content" class="w-full p-4 border border-gray-300 rounded-lg mb-4" rows="4" placeholder="Type your reply here..."></textarea>
             <button type="submit" class="w-full py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition">Send Reply</button>
         </form>

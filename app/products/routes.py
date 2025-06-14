@@ -1,8 +1,9 @@
-from flask import request, session, redirect, url_for, flash, render_template
+import os
+from flask import request, session, redirect, url_for, flash, render_template, current_app
 from .models import Product
 from app.extensions import db
 from . import products_bp
-
+from werkzeug.utils import secure_filename
 
 @products_bp.route("/market", methods=["GET", "POST"])
 def market():
@@ -42,24 +43,40 @@ def market():
     return render_template(
         "market.html", products=products, cart=session.get("cart", [])
     )
-    
 
+UPLOAD_FOLDER = os.path.join("app", "static", "img")  
+ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg", "gif"}
+
+def allowed_file(filename):
+    return "." in filename and filename.rsplit(".", 1)[1].lower() in ALLOWED_EXTENSIONS   
 
 @products_bp.route("/add_product", methods=["GET", "POST"])
 def add_product():
-    '''
-    Allows admin or user to add a new product to the marketplace.
-
-    GET: Renders the product submission form.
-    POST: Accepts product data from form and stores it in the database.
-    '''
     if request.method == "POST":
         name = request.form["name"]
         price = float(request.form["price"])
         description = request.form["description"]
-        image_url = request.form["image_url"]
+        image = request.files["image_file"]
 
-        # Create a new product and add it to the database
+        if image.filename == "":
+            flash("No selected file", "danger")
+            return redirect(request.url)
+
+        if image and allowed_file(image.filename):
+            filename = secure_filename(image.filename)
+
+            # Save to static/img folder
+            image_path = os.path.join(current_app.static_folder, "img", filename)
+            os.makedirs(os.path.dirname(image_path), exist_ok=True)
+            image.save(image_path)
+
+            # Define image_url as filename (can be used in HTML)
+            image_url = filename
+        else:
+            flash("Invalid image file format.", "error")
+            return redirect(url_for("products.add_product"))
+
+        # Create and save product
         new_product = Product(
             name=name, price=price, description=description, image_url=image_url
         )
@@ -70,7 +87,6 @@ def add_product():
         return redirect(url_for("products.market"))
 
     return render_template("add_product.html")
-
 
 @products_bp.route("/add_to_cart", methods=["POST"])
 def add_to_cart():
@@ -203,8 +219,8 @@ def checkout():
 
         # Validate Mobile Money payment
         if payment_method == "mobile_money":
-            momo_number = request.form.get("momo_number")
-            if not momo_number:
+            mpesa_number = request.form.get("mpesa_number")
+            if not mpesa_number:
                 flash(
                     "Please enter your mobile number for Mobile Money payment.", "error"
                 )
@@ -252,3 +268,10 @@ def order_confirmation():
     '''
     return render_template("order_confirmation.html")
 
+@products_bp.route("/delete_product/<int:product_id>", methods=["POST"])
+def delete_product(product_id):
+    product = Product.query.get_or_404(product_id)
+    db.session.delete(product)
+    db.session.commit()
+    flash("Product deleted successfully!", "success")
+    return redirect(url_for("products.market"))

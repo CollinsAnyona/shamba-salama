@@ -40,7 +40,7 @@
     </div>
 
     <!-- Reply Form -->
-    <form action="{{ url_for('reply_to_post') }}" method="POST" class="mt-6 space-y-4">
+    <form action="{{ url_for('posts.reply_to_post') }}" method="POST" class="mt-6 space-y-4">
         <textarea name="reply_content" required placeholder="Write your reply here..." class="w-full p-4 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:outline-none" rows="4"></textarea>
         
         <!-- Reply Author Selection -->

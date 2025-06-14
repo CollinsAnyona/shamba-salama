@@ -4,8 +4,9 @@
 
 {% block content %}
     <h2 class="text-2xl font-semibold mb-6 text-center">Add a New Product</h2>
-    
-    <form method="POST" class="space-y-6 max-w-2xl mx-auto">
+
+    <!-- IMPORTANT: enctype must be added for file uploads -->
+    <form method="POST" enctype="multipart/form-data" class="space-y-6 max-w-2xl mx-auto">
         
         <!-- Product Name Field -->
         <div>
@@ -25,10 +26,10 @@
             <textarea name="description" required class="mt-2 p-3 border border-gray-300 rounded-md w-full focus:ring-2 focus:ring-blue-500"></textarea>
         </div>
 
-        <!-- Image URL Field -->
+        <!-- Image Upload Field (NEW) -->
         <div>
-            <label for="image_url" class="block text-lg font-medium text-gray-700">Image Name</label>
-            <input type="text" name="image_url" required class="mt-2 p-3 border border-gray-300 rounded-md w-full focus:ring-2 focus:ring-blue-500">
+            <label for="image_file" class="block text-lg font-medium text-gray-700">Upload Product Image</label>
+            <input type="file" name="image_file" accept="image/*" required class="mt-2 p-3 border border-gray-300 rounded-md w-full focus:ring-2 focus:ring-blue-500 bg-white">
         </div>
 
         <!-- Submit Button -->
@@ -36,5 +37,4 @@
             <button type="submit" class="w-full py-3 bg-green-500 text-white font-bold rounded-md hover:bg-green-600 transition duration-300">Add Product</button>
         </div>
     </form>
-
 {% endblock %}

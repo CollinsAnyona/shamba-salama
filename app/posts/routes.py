@@ -1,6 +1,6 @@
 from app.extensions import db
 from .models import Post, Reply, Category
-from flask import render_template, request, redirect, url_for, flash
+from flask import render_template, request, redirect, url_for, flash, current_app
 from flask_login import current_user
 from datetime import datetime
 from . import posts_bp
@@ -67,7 +67,7 @@ def category_posts(category_id):
         user_id = current_user.id if current_user.is_authenticated else None
 
         # Log the data for debugging
-        posts_bp.logger.debug(
+        current_app.logger.debug(
             f"Creating post with title: {title}, content: {content}, user_id: {user_id}, category_id: {category.id}"
         )
 
