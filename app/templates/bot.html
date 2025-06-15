@@ -1,117 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shamba Salama Chatbot</title>
-    <style>
-        body{
-            font-family: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";;
-
-            /* Floating Chat Icon */
-            #chatbot-button{
-                position: fixed;
-                bottom: 20px;
-                right: 20px;
-                background-color: #228B22;
-                color: white;
-                border: none;
-                border-radius: 50px;
-                padding: 12px 20px;
-                font-size: 16px;
-                box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-                cursor: pointer;
-                z-index: 1000;
-            }
-
-            /* chatbot Modal (full page) */
-            #chatbot-modal{
-                display: none;
-                position: fixed;
-                top: 0; left: 0; right: 0; bottom: 0;
-                background-color: white;
-                z-index: 999;
-                padding: 20px;
-            }
-
-            #chatbot-header {
-                font-size: 20px;
-                font-weight: bold;
-                color: #228B22;
-                margin-bottom: 10px;
-            }
-
-            #chatbot-close {
-                float: right;
-                background: #228B22;
-                color: white;
-                border: none;
-                padding: 5px 10px;
-                font-size: 14px;
-                border-radius: 5px;
-                cursor: pointer;
-            }
-
-            #chat-window {
-                height: 70vh;
-                overflow-y: auto;
-                border: 1px solid #ccc;
-                padding: 10px;
-                font-size: 18px;
-            }
-
-            #user-input {
-                width: 100%;
-                padding: 10px;
-                margin-top: 10px;
-                font-size: 18px;
-            }
-        }
-    </style>
-</head>
-<body>
-
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/bot.css') }}"
+    />
+  </head>
+  <body>
     <!-- Floating Button -->
-    <button id="chatbot-button">Ask Shamba Bot</button>
+    <button id="chatbot-button">
+      <i class="fas fa-seedling"></i>
+    </button>
 
-    <!--  Full Page Chatbot -->
+    <!-- Full Page Chatbot -->
     <div id="chatbot-modal">
+      <div class="chatbot-container">
         <div id="chatbot-header">
-            Shamba Salama Chatbot
-            <button id="chatbot-close">Close</button>
+          <div class="header-content">
+            <div class="bot-avatar">
+              <i class="fas fa-seedling"></i>
+            </div>
+            <div class="header-text">
+              <h2>Shamba Salama Bot</h2>
+              <p>Your smart farming assistant</p>
+            </div>
+          </div>
+          <button id="chatbot-close">
+            <i class="fas fa-times"></i>
+            Close
+          </button>
         </div>
+
         <div id="chat-window">
-            Hello! I'm Shamba Bot. Ask me anything about farming!
+          <div class="welcome-message">
+            <div class="bot-icon">
+              <i class="fas fa-seedling"></i>
+            </div>
+            <h3>Welcome to Shamba Salama!</h3>
+            <p>
+              I'm your intelligent farming assistant. Ask me anything about
+              crops, soil management, pest control, weather, or farming
+              techniques. Let's grow together! 🌱
+            </p>
+          </div>
         </div>
-        <input type="text" id="user-input" placeholder="Type your question here...">
+
+        <div class="input-container">
+          <input
+            type="text"
+            id="user-input"
+            placeholder="Ask me about farming, crops, soil, weather..."
+          />
+          <button id="send-button">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
     </div>
 
-    <script>
-        const button = document.getElementById('chatbot-button');
-        const modal = document.getElementById('chatbot-modal');
-        const close = document.getElementById('chatbot-close');
-
-        const chatWindow = document.getElementById('chat-window');
-        const userInput = document.getElementById('user-input');
-
-        button.onclick = () => modal.style.display = 'block';
-        close.onclick = () => {
-            modal.style.display = 'none';
-            chatWindow.innerHTML = "Hello! I'm Shamba Bot. Ask me anything about farming!";
-            userInput.value = '';
-        };
-
-        userInput.addEventListener("keypress", function (e) {
-            if (e.key === 'Enter') {
-                const userText = userInput.value.trim()
-                if (userText !== "") {
-                    chatWindow.innerHTML += `<div><strong>You:</strong> ${userText}</div>`;
-                    chatWindow.innerHTML += `<div><strong>Shamba Bot:</strong>I'm still learning! But I'll soon be ready to answer your farming questions.</div>`;
-                    userInput.value = "";
-                    chatWindow.scrollTop = chatWindow.scrollHeight;
-                }
-            }
-        });
-    </script>
-</body>
+    <script src="{{ url_for('static', filename='js/bot.js') }}"></script>
+  </body>
 </html>

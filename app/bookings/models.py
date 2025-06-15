@@ -19,7 +19,7 @@ class Booking(db.Model):
 class Message(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.Text, nullable=False)
-    timestamp = db.Column(db.DateTime, default=datetime.utcnow)
+    timestamp = db.Column(db.DateTime, default=datetime.now)
     booking_id = db.Column(db.Integer, db.ForeignKey('bookings.id'))
     sender_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     is_read = db.Column(db.Boolean, default=False)
