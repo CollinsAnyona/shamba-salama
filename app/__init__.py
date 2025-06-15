@@ -2,6 +2,10 @@ from flask import Flask
 from app.services.initial_data import create_default_data
 from app.config import Config
 from app.extensions import db, login_manager
+from flask_admin import Admin
+from flask_admin.contrib.sqla import ModelView
+
+admin = Admin(name='Admin Panel', template_mode='bootstrap4')
 
 
 def create_app():
@@ -25,6 +29,20 @@ def create_app():
     app.register_blueprint(posts_bp)
     app.register_blueprint(main_bp)
     app.register_blueprint(shambabot_bp)
+    
+    admin.init_app(app)
+    # Register models with Flask-Admin
+    from app.users.models import User
+    from app.products.models import Product
+    from app.bookings.models import Booking
+    from app.posts.models import Post
+    
+    admin.add_view(ModelView(User, db.session))
+    admin.add_view(ModelView(Product, db.session))
+    admin.add_view(ModelView(Booking, db.session))
+    admin.add_view(ModelView(Post, db.session))
+    
+    
 
     @app.after_request
     def add_header(response):
