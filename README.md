@@ -50,7 +50,7 @@ So far, we’ve reached 200+ farmers in our pilot phase, with many reporting up 
 * **Backend:** Python (Flask), Jinja2
 * **AI:** OpenAI/GPT (with plans for LLaMA 3 integration)
 * **Database:** SQLite
-* **Deployment:** Vercel, GitHub
+* **Deployment:** render, GitHub
 
 ---
 
