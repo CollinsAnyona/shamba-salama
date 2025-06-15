@@ -276,3 +276,36 @@ a {
   color: white;
 }
 
+@media (max-width: 1024px) {
+  .product-item {
+    width: 45%;
+  }
+
+  .card {
+    width: 45%;
+  }
+}
+
+@media (max-width: 640px) {
+  .product-item {
+    width: 100%;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .info-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .cart-button {
+    right: 10px;
+    top: 10px;
+    font-size: 16px;
+    padding: 8px;
+  }
+}
+
