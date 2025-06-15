@@ -1,7 +1,11 @@
-<div class="sidebar">
+<!-- Toggle Button for Mobile -->
+<button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
     <div class="sidebar-header">
         <a href="{{ url_for('main.home') }}">
-            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo" class="sidebar-logo">
         </a>
     </div>
     <div class="sidebar-menu">
@@ -29,10 +33,16 @@
         <a href="{{ url_for('main.help') }}" class="{% if request.path == url_for('main.help') %}active{% endif %}">
             <span class="glyphicon glyphicon-question-sign"></span> Help
         </a>
-        <a href="{{ url_for('auth.logout') }}" 
-           class="flex items-center justify-center px-2 py-0 rounded bg-lime-600 text-white">
+        <a href="{{ url_for('auth.logout') }}" class="flex items-center justify-center px-2 py-0 rounded bg-lime-600 text-white">
             <span class="glyphicon glyphicon-log-out"></span>
             <span>Logout</span>
         </a>
     </div>
 </div>
+<script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('active');
+    }
+</script>
+    
