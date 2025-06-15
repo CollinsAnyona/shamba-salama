@@ -17,7 +17,6 @@ class Config:
     EMAIL_PASSWORD = os.getenv('EMAIL_PASSWORD')
     ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
     
-    # Debug prints (remove these after fixing)
-    print(f"Database URI: {SQLALCHEMY_DATABASE_URI}")
-    print(f"Instance Directory: {INSTANCE_DIR}")
-    print(f"Database path: {DATABASE_PATH}")
+    OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+    OPENAI_ORGANIZATION = os.getenv('OPENAI_ORGANIZATION')
+    OPENAI_PROJECT = os.getenv('OPENAI_PROJECT')
