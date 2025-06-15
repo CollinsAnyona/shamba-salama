@@ -34,27 +34,27 @@
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
+      <!-- Logo -->
       <a href="index.html" class="logo d-flex align-items-center me-auto">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
         <img src="{{ url_for('static', filename='img/main-logo.png') }}" alt="logo">
       </a>
-
+    
+      <!-- Mobile toggle button -->
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    
+      <!-- Navmenu -->
       <nav id="navmenu" class="navmenu">
-        <nav id="navmenu" class="navmenu">
-          <ul>
-            <!-- Home section (Hero) -->
-            <li><a href="#hero" class="active">Home</a></li>
-            
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>  
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-          <!-- Mobile menu toggle button -->
-          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-        </nav>
+        <ul>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
       </nav>
+    
+      <!-- Get Started button -->
       <a class="btn-getstarted" href="{{ url_for('auth.login') }}">Get Started</a>
-    </div>
+    </div>    
   </header>
 
   <main class="main">
