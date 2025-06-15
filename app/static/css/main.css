@@ -383,7 +383,7 @@ h6 {
   .navmenu .dropdown .dropdown:hover>ul {
     opacity: 1;
     top: 0;
-    left: -100%;
+    left: 100%;
     visibility: visible;
   }
 }
@@ -469,7 +469,7 @@ h6 {
 
   .navmenu .dropdown ul {
     position: static;
-    display: none;
+    display: block;
     z-index: 99;
     padding: 10px 0;
     margin: 10px 20px;
@@ -494,26 +494,93 @@ h6 {
 
   .mobile-nav-active .mobile-nav-toggle {
     color: #fff;
-    position: absolute;
+    position: relative;
     font-size: 32px;
     top: 15px;
     right: 15px;
     margin-right: 0;
-    z-index: 9999;
+    z-index: 10000;
   }
 
   .mobile-nav-active .navmenu {
     position: fixed;
     overflow: hidden;
-    inset: 0;
+    /* inset: 0; */
     background: rgba(33, 37, 41, 0.8);
     transition: 0.3s;
+    right: 0;
   }
 
   .mobile-nav-active .navmenu>ul {
     display: block;
   }
 }
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  ul.content li,
+  ul.content li span {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .logo img {
+    max-width: 180px;
+    height: auto;
+  }
+
+  .btn-getstarted {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .hero .content {
+    text-align: center;
+    padding: 0 15px;
+  }
+
+  .section {
+    padding: 40px 15px;
+  }
+
+}
+
+@media (max-width: 767px) {
+  #header .container-fluid {
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo img {
+    max-width: 120px; 
+    height: auto;
+  }
+
+  .logo {
+    flex-shrink: 1;
+  }
+
+  .btn-getstarted {
+    font-size: 14px;
+    padding: 8px 14px;
+    white-space: nowrap;
+  }
+}
+
 
 /*--------------------------------------------------------------
 # Global Footer
