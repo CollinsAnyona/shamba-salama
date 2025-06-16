@@ -156,3 +156,39 @@ def create_default_expert_users():
 
     # Commit the new users to the database
     db.session.commit()
+
+def create_default_farmer_users():
+    default_farmers = [
+        {
+            "username": "Akinyi Otieno",
+            "email": "akinyi@gmail.com",
+            "password": "farm123",
+            "role": "farmer",
+            "gender": "Female",
+            "profile_image_url": "female_farmer.jpg",
+        },
+        {
+            "username": "Kiptoo Langat",
+            "email": "kiptoo@gmail.com",
+            "password": "farm123",
+            "role": "farmer",
+            "gender": "Male",
+            "profile_image_url": "male_farmer.jpg",
+        },
+    ]
+
+    for farmer in default_farmers:
+        user = User.query.filter_by(username=farmer["username"]).first()
+        if user is None:
+            user = User(
+                username=farmer["username"],
+                email=farmer["email"],
+                role=farmer["role"],
+                gender=farmer["gender"],
+                profile_image_url=farmer["profile_image_url"],
+            )
+            user.set_password(farmer["password"])
+            db.session.add(user)
+
+    db.session.commit()
+
